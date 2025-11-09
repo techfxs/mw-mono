@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "outDir": "../../dist/out-tsc",
+    "module": "commonjs",
+    "types": ["node"]
+  },
+  "include": ["**/*.ts", "**/*.js", "playwright.config.ts"],
+  "extends": "../../tsconfig.base.json"
+}
