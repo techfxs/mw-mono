@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className='flex flex-col min-h-screen'>
-        <Header title='Products' />
+        <Header title='Product' />
         <main className='flex-grow'>{children}</main>
         <Footer companyName='MW Store' />
       </body>
