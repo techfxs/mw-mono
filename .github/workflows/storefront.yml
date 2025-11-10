@@ -52,4 +52,4 @@ jobs:
       - name: Deploy to Vercel
         run: |
           cd apps/storefront
-          vercel deploy --prebuilt ${{ github.event_name == 'push' && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}
+          vercel deploy ${{ github.event_name == 'push' && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}
