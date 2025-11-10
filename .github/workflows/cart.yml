@@ -36,6 +36,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install app dependencies
+        run: npm ci --prefix apps/cart
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
