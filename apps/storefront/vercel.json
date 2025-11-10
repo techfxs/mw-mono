@@ -1,4 +1,6 @@
 {
-  "builds": [],
-  "buildCommand": "echo 'Build already completed'"
+  "buildCommand": "echo 'Build already completed'",
+  "installCommand": "echo 'Build already completed'",
+  "framework": "nextjs",
+  "ignoreCommand": "exit 0"
 }
