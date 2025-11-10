@@ -1,7 +1,7 @@
 {
+  "buildCommand": "cd ../.. && npx nx build storefront --prod",
   "outputDirectory": "./.next",
+  "installCommand": "cd ../.. && npm ci",
   "framework": "nextjs",
-  "ignoreCommand": "exit 0",
-  "buildCommand": "echo 'Build already completed in CI'",
-  "installCommand": "echo 'Dependencies already installed'"
+  "ignoreCommand": "exit 0"
 }
