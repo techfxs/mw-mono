@@ -17,7 +17,7 @@ on:
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_CHECKOUT_PROJECT_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.MW_MONO_CHECKOUT_PROJECT_ID }}
 
 jobs:
   build-and-deploy:
@@ -33,25 +33,19 @@ jobs:
           node-version: "20"
           cache: "npm"
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install app dependencies
-        run: npm ci --prefix apps/checkout
-
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
-      - name: Create Vercel project config
-        run: |
-          mkdir -p apps/checkout/.vercel
-          echo '{"orgId":"${{ secrets.VERCEL_ORG_ID }}","projectId":"${{ secrets.VERCEL_CHECKOUT_PROJECT_ID }}"}' > apps/checkout/.vercel/project.json
-
       - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=${{ github.event_name == 'push' && 'production' || 'preview' }} --token=${{ secrets.VERCEL_TOKEN }} --cwd=apps/checkout
-
-      - name: Build Project Artifacts
-        run: vercel build ${{ github.event_name == 'push' && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }} --cwd=apps/checkout
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        working-directory: .
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.MW_MONO_CHECKOUT_PROJECT_ID }}
 
       - name: Deploy to Vercel
-        run: vercel deploy ${{ github.event_name == 'push' && '--prod' || '' }} --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --cwd=apps/checkout
+        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+        working-directory: .
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.MW_MONO_CHECKOUT_PROJECT_ID }}
