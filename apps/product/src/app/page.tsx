@@ -6,7 +6,7 @@ export default function Page() {
           Welcome to Product App
         </h1>
         <p className='text-lg text-gray-600 mb-8'>
-          A standalone Next.js application for product management
+          A Standalone Next.js Application for Product Management
         </p>
         <div className='space-x-4'>
           <a
