@@ -37,7 +37,7 @@ jobs:
         run: npm ci
 
       - name: Build Storefront App
-        run: npm run build --workspace=@mw-mono/storefront
+        run: npx nx build storefront --prod
         env:
           NODE_ENV: production
 
