@@ -5,6 +5,8 @@ A standalone Next.js application that can run both inside the Nx monorepo and in
 ## Running Inside Monorepo
 
 ```bash
+
+
 # From monorepo root
 npx nx dev product
 npx nx build product
