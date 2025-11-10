@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd ../.. && npx nx build product --prod",
+  "outputDirectory": "./.next",
+  "installCommand": "cd ../.. && npm ci",
+  "framework": "nextjs",
+  "ignoreCommand": "exit 0"
+}
