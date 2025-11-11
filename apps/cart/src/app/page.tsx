@@ -4,7 +4,7 @@ export default function Page() {
       <div className='text-center'>
         <h1 className='text-5xl font-bold text-gray-900 mb-4'>Cart App</h1>
         <p className='text-lg text-gray-600 mb-8'>
-          Shopping cart and item management
+          Shopping cart and item management...
         </p>
         <div className='space-x-4'>
           <a
